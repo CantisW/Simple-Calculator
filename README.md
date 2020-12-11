@@ -1,0 +1,1 @@
+Simple Java program made for a school project.
