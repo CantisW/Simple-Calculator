@@ -391,11 +391,15 @@ public class Buttons {
 		add.addActionListener(new ActionListener() { // On button clicked
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Clicked button +!");
-				if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
-					Textbox.guiText = Textbox.guiText + "+";
+				if (showingAnswer == false) {
+					if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
+						Textbox.guiText = Textbox.guiText + "+";
+						arithmetic.add("+");
+					}
+				} else {
+					Textbox.clear();
 				}
 				Textbox.changeText();
-				arithmetic.add("+");
 				isWriting = false;
 			}
 		});
@@ -406,11 +410,15 @@ public class Buttons {
 		subtract.addActionListener(new ActionListener() { // On button clicked
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Clicked button -!");
-				if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
-					Textbox.guiText = Textbox.guiText + "-";
+				if (showingAnswer == false) {
+					if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
+						Textbox.guiText = Textbox.guiText + "-";
+						arithmetic.add("-");
+					}
+				} else {
+					Textbox.clear();
 				}
 				Textbox.changeText();
-				arithmetic.add("-");
 				isWriting = false;
 			}
 		});
@@ -421,11 +429,15 @@ public class Buttons {
 		multiply.addActionListener(new ActionListener() { // On button clicked
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Clicked button x!");
-				if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
-					Textbox.guiText = Textbox.guiText + "x";
+				if (showingAnswer == false) {
+					if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
+						Textbox.guiText = Textbox.guiText + "x";
+						arithmetic.add("x");
+					}
+				} else {
+					Textbox.clear();
 				}
 				Textbox.changeText();
-				arithmetic.add("x");
 				isWriting = false;
 			}
 		});
@@ -436,11 +448,15 @@ public class Buttons {
 		divide.addActionListener(new ActionListener() { // On button clicked
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Clicked button /!");
-				if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
-					Textbox.guiText = Textbox.guiText + "/";
+				if (showingAnswer == false) {
+					if (Textbox.guiText != null && !Textbox.guiText.isEmpty()) {
+						Textbox.guiText = Textbox.guiText + "/";
+						arithmetic.add("/");
+					}
+				} else {
+					Textbox.clear();
 				}
 				Textbox.changeText();
-				arithmetic.add("/");
 				isWriting = false;
 			}
 		});
