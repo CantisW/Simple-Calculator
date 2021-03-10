@@ -8,6 +8,7 @@ public class LoadWidgets {
 
 	public static void main(String[] args) {
 		Frame.frame();
+		Frame.historyPanel();
 		Frame.frame.add(Textbox.text);
 		Frame.frame.add(Buttons.zero);
 		Frame.frame.add(Buttons.one);
@@ -24,6 +25,9 @@ public class LoadWidgets {
 		Frame.frame.add(Buttons.multiply);
 		Frame.frame.add(Buttons.divide);
 		Frame.frame.add(Buttons.equals);
+		Frame.frame.add(Buttons.history);
+		History.CreateFile();
+		History.ReadHistory();
 	}
 
 }

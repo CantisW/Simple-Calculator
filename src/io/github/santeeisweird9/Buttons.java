@@ -17,6 +17,7 @@ public class Buttons {
 	static JButton seven = new JButton("7");
 	static JButton eight = new JButton("8");
 	static JButton nine = new JButton("9");
+	static JButton history = new JButton("History");
 
 	static JButton add = new JButton("+");
 	static JButton subtract = new JButton("-");
@@ -31,6 +32,8 @@ public class Buttons {
 	static long currentNum;
 	static long secondNum;
 	static long answer;
+	
+	static String expression;
 
 	static boolean isWriting = false;
 	static int currentPos = -1;
@@ -38,6 +41,22 @@ public class Buttons {
 
 	final static int buttonWidth = 100;
 	final static int buttonHeight = 50;
+	
+	public static void HistoryButton() {
+		history.setBounds(600, 100, buttonWidth, buttonHeight);
+		history.addActionListener(new ActionListener() { // On button clicked
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Clicked button history!");
+				if (!Frame.panel.isVisible()) {
+					Frame.panel.setVisible(true);
+					Frame.frame.setSize(Frame.frameWidth + 300,Frame.frameHeight);
+				} else {
+					Frame.panel.setVisible(false);
+					Frame.frame.setSize(Frame.frameWidth,Frame.frameHeight);
+				}
+			};
+		});
+	}
 
 	public static void ZeroButton() {
 		zero.setBounds(300, 600, buttonWidth, buttonHeight);
@@ -490,9 +509,10 @@ public class Buttons {
 					if (currentArithmetic.contentEquals("/")) {
 						answer = Calculate.Divide(currentNum, secondNum);
 					}
-
 				}
 				String ans = String.valueOf(answer);
+				expression = Textbox.guiText + " = " + ans;
+				History.WriteHistory(expression);
 				Textbox.guiText = ans;
 				showingAnswer = true;
 				Textbox.changeText();
@@ -520,5 +540,6 @@ public class Buttons {
 		MultiplyButton();
 		DivideButton();
 		EqualsButton();
+		HistoryButton();
 	}
 }
