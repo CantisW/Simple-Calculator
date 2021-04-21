@@ -23,6 +23,9 @@ public class Textbox {
 		text.setText(guiText);
 	}
 	
+	// ---------------
+	// Purpose: Set properties
+	// ---------------
 	public static void LoadScreen() {
 		text.setBounds(175, 100, textWidth, textHeight);
 		text.setEditable(false);

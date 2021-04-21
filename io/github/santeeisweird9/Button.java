@@ -10,7 +10,9 @@ public class Button {
 	public static int Height = 50;
 	
 	
-	
+	// ---------------
+	// Purpose: Method to create buttons in LoadWidgets, allows for easy editing
+	// ---------------
 	public static JButton CreateButton(String displayname, int x, int y, int Width, int Height, int type) {
 		System.out.println("Creating button "+displayname);
 		JButton button = new JButton(displayname);
@@ -29,10 +31,16 @@ public class Button {
 		return button;
 	}
 	
+	// ---------------
+	// Purpose: Define the properties of the button as numerical inputs
+	// ---------------
 	public static void DefineNumber(JButton button, int num) {
 		
 	}
 	
+	// ---------------
+	// Purpose: Define the properties of the button as arithmetic
+	// ---------------
 	public static void DefineArithmetic(JButton button, String arithmetic) {
 		
 	}

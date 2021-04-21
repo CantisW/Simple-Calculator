@@ -1,11 +1,9 @@
 package io.github.santeeisweird9;
 
-import javax.swing.JButton;
-
 public class LoadWidgets {
 	
-	public static int Width = 100;
-	public static int Height = 50;
+	final static int Width = 100; // The initial length of the buttons (x)
+	final static int Height = 50; // The initial height of the buttons (y)
 
 	public static void LoadFrame() {
 		Frame.frame();
@@ -13,6 +11,9 @@ public class LoadWidgets {
 		Frame.historyPanel();
 	}
 	
+	// ---------------
+	// Purpose: Load and create the buttons through CreateButton method
+	// ---------------
 	public static void LoadButtons() {
 		// Types:
 		// 1 defines a numerical value (0-9)
@@ -41,7 +42,9 @@ public class LoadWidgets {
 		Frame.main.add(Button.CreateButton("History", 600, 100, Width, Height, 3));
 	}
 	
-	
+	// ---------------
+	// Purpose: Load the UI used to display text
+	// ---------------
 	public static void LoadTextbox() {
 		System.out.println("Loading textbox...");
 		Textbox.LoadScreen();
@@ -49,10 +52,22 @@ public class LoadWidgets {
 		System.out.println("Loaded textbox!");
 	}
 	
+	// ---------------
+	// Purpose: Load the history system
+	// ---------------
+	public static void LoadHistory() {
+		History.CreateFile();
+		History.ReadHistory();
+	}
+	
+	// ---------------
+	// Purpose: Start up the program, load all UIs
+	// ---------------
 	public static void main(String args[]) {
 		LoadButtons();
 		LoadTextbox();
-		LoadFrame();
+		LoadHistory();
+		LoadFrame(); // Don't know why, but this has to be the final thing to be loaded or else everything breaks!
 		System.out.println("All components loaded!");
 	}
 }
